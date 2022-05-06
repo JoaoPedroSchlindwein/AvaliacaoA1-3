@@ -2,8 +2,9 @@
 obter o resto da divisão do número maior pelo menor
 informados (independentemente da ordem informada)
 e informar que não é possível realizar a divisão caso o
-divisor seja zero. Faça os ajustes necessários no código
-para que esses objetivos sejam alcançados.*/
+divisor seja zero.
+ Faça os ajustes necessários no código
+para que esses objetivos sejam alcançados. */
 
 #include <stdio.h>
 int main(void)
