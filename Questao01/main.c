@@ -7,30 +7,38 @@ int main(void)
   char categoria;
   
   int quantidade = 0,
-      soma,
-      total;
+      soma = 0,
+      total = 0;
 
-  float media;
-  setbuf(stdin,NULL);
+  float media = 0;
+
+  setbuf(stdin, NULL);
   printf("Informe a categoria: ");
   scanf("%c", &categoria);
   categoria = toupper(categoria);
   
   while (categoria == 'A' || categoria == 'B' || categoria == 'C'){
+
     do{
         printf("Informe a quantidade: ");
         scanf("%d", &quantidade);
       }while (quantidade <= 0);
+
     soma = soma + quantidade;
     total++;
-    media = soma / quantidade;
     setbuf(stdin,NULL);
     printf("Informe a categoria: ");
     scanf("%c", &categoria);
     categoria = toupper(categoria);
   }
 
-  printf("A media dos produtos eh %.2f", media);
+  media = (float)soma / (float)total;
 
+  if (total > 0)
+    printf("A media dos produtos eh %.2f\n", media);
+
+  else 
+    printf("Nenhuma operacao valida foi realizada!\n");
+    
   return 0;
 }
