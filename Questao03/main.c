@@ -13,12 +13,12 @@ int main(void) {
   while (maior < menor){
     setbuf(stdin,NULL);
     printf("Informe o valor do limite superior do intervalo: ");
-    scanf("%d",&maior);
+    scanf("%d", &maior);
     
   }
   int listaDePrimos [maior];
   printf("Informe quantos numeros deseja imprimir por linha: ");
-  scanf("%d",&n);
+  scanf("%d", &n);
   
   while (menor < maior){
     
