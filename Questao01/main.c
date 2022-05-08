@@ -1,4 +1,4 @@
-//b) Permitir a leitura da categoria nas execuções sucessivas do programa.
+//c) Garantir que a quantidade seja maior que 0.
 #include <stdio.h>
 #include <ctype.h>
 
@@ -6,7 +6,7 @@ int main(void)
 {
   char categoria;
   
-  int quantidade,
+  int quantidade = 0,
       soma,
       total;
 
@@ -17,9 +17,10 @@ int main(void)
   categoria = toupper(categoria);
   
   while (categoria == 'A' || categoria == 'B' || categoria == 'C'){
-
-    printf("Informe a quantidade: ");
-    scanf("%f", &quantidade);
+    do{
+        printf("Informe a quantidade: ");
+        scanf("%d", &quantidade);
+      }while (quantidade <= 0);
     soma = soma + quantidade;
     total++;
     media = soma / quantidade;
