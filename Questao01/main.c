@@ -1,18 +1,24 @@
-/*b) Permitir a leitura da categoria nas execuções
-sucessivas do programa.*/
+//c) Garantir que a quantidade seja maior que 0.
+
 #include <stdio.h>
 
 int main(void) {
   char categoria;
-  int quantidade, soma, total;
+  int quantidade = 0, 
+    soma,
+    total;
+  
   float media;
+  
   printf("Informe a categoria: ");
   scanf("%c", &categoria);
-  while (categoria == 'A' || categoria == 'B' || categoria == 'C')
-    {
-      
-      printf("Informe a quantidade: ");
-      scanf("%d", &quantidade);
+  
+  while (categoria == 'A' || categoria == 'B' || categoria == 'C') {
+        
+      do{
+        printf("Informe a quantidade: ");
+        scanf("%d", &quantidade);
+      }while (quantidade <= 0);
       
       soma = soma + quantidade;
       total ++;
