@@ -7,35 +7,41 @@ a) Calcular o valor total da compra.
   #include <stdio.h>
 
 int main(void) {
-  int quantidade;
-  float valor = 1, valorPorProduto = 0, soma = 0;
-  printf("Quantidade: ");
-  scanf("%d",&quantidade);
-  while (quantidade > 0){
-    do{
-    printf("Valor: ");
-    scanf("%f",&valor);
-    if (valor < 0)
-      printf("Eh menor que 0, valor nao contabilizado!\n");
-    }while (valor < 0);
-    
-    valorPorProduto = valor * quantidade;
-    //printf("Valor por produto: R$ %.2f\n",valorPorProduto); Teste de semântica, verificando o funcionamento do valor
-    // por produto
-    //valor = 0; Teste de sintaxe
-    soma = soma + valorPorProduto;
-    //printf("Total parcial: R$ %.2f\n\n",soma); Teste de semântica
-      
-    
-    printf("\nQuantidade: ");
+    int quantidade,
+        contadorProduto = 0;
+
+    float valorUnitario = 1, 
+        valorPorProduto = 0, 
+        somaCompra = 0, 
+        somaValorUnitario = 0, 
+        valorMedio;
+
+    printf("Quantidade: ");
     scanf("%d",&quantidade);
-  
+
+    while (quantidade > 0){
+        do{
+            printf("Valor: ");
+            scanf("%f",&valorUnitario);
+            if (valorUnitario < 0)
+                printf("Eh menor que 0, valor nao contabilizado!\n");
+        }while (valorUnitario < 0);
+
+        valorPorProduto = valorUnitario * quantidade;
+        somaCompra = somaCompra + valorPorProduto;
+        somaValorUnitario = somaValorUnitario + valorUnitario;
+        contadorProduto = contadorProduto + 1;
+        printf("\nQuantidade: ");
+        scanf("%d",&quantidade);
     }
-  for (int i = 0; i < 25; i++){
-    printf("-");
-  }
-  
-  printf("\nTotal final: %.2f\n\n",soma);
-  
-  return 0;
+
+    for (int i = 0; i < 25; i++){
+        printf("-");
+    }
+
+    valorMedio = somaValorUnitario/contadorProduto;
+    printf("\nTotal final: %.2f\n",somaCompra);
+    printf("Valor medio dos itens: %.2f",valorMedio);
+
+    return 0;
 }
