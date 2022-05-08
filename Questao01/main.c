@@ -1,5 +1,5 @@
-/*a) Ler a quantidade somente se a categoria é válida
-(categorias A, B e C válidas).*/
+/*b) Permitir a leitura da categoria nas execuções
+sucessivas do programa.*/
 #include <stdio.h>
 
 int main(void) {
@@ -12,12 +12,13 @@ int main(void) {
     {
       
       printf("Informe a quantidade: ");
-      scanf("%f", &quantidade);
+      scanf("%d", &quantidade);
       
       soma = soma + quantidade;
       total ++;
       media = soma / quantidade;
       printf("Informe a categoria: ");
+      setbuf(stdin,NULL);
       scanf("%c", &categoria);
     }
   printf("A media dos produtos eh %.2f", media);
