@@ -6,7 +6,7 @@ int main(void) {
       maior = 0, 
       numero,
       numColunas, 
-      col = 1,
+      col = 0,
       divisor, 
       contadorDePrimos = 0, 
       primo = 1, 
@@ -30,11 +30,10 @@ int main(void) {
     
   }
   
-  int listaDePrimos [maior];
   printf("Informe quantos numeros deseja imprimir por linha: ");
   scanf("%d", &numColunas);
    
-  while (numero < maior){
+  while (numero <= maior){
     
     divisor = 2;  
     primo = 1;
@@ -50,7 +49,6 @@ int main(void) {
     if (primo == 1){
 
       printf("%d\t",numero);  
-      contadorDePrimos += 1;
       col += 1;
       
       if  (col == numColunas){
